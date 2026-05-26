@@ -71,3 +71,9 @@ Create a free Formspree form and replace `YOUR_FORM_ID` in `src/App.jsx`.
 ## Formspree connected
 
 Contact form endpoint configured: https://formspree.io/f/meedrplp
+
+## Mobile fix
+
+- Mobile navigation changed from horizontal scroll to compact grid.
+- Hero floating cards now stack cleanly on mobile and keep floating layout on desktop.
+- Hero spacing and typography adjusted for small screens.
