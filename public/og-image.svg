@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="0.45" stop-color="#eefbf7"/>
+      <stop offset="1" stop-color="#dbe7f8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <circle cx="120" cy="130" r="180" fill="#5eead4" opacity="0.28"/>
+  <circle cx="1050" cy="100" r="220" fill="#bfd2f3" opacity="0.65"/>
+  <text x="90" y="180" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#008575">POWER BI · MICROSOFT FABRIC · DATA ENGINEERING</text>
+  <text x="90" y="300" font-family="Arial, sans-serif" font-size="86" font-weight="900" fill="#445065">Analytical Solutions</text>
+  <text x="90" y="400" font-family="Arial, sans-serif" font-size="86" font-weight="900" fill="#44d6ad">for Growth.</text>
+  <rect x="90" y="440" width="300" height="10" rx="5" fill="#44d6ad"/>
+  <text x="90" y="520" font-family="Arial, sans-serif" font-size="34" fill="#526074">MFK Analytics · Mauricio Montoya Huertas</text>
+</svg>

@@ -7,8 +7,25 @@ import { Button } from "./components/ui/button";
 const linkedInUrl = "https://cr.linkedin.com/in/mauricio-montoya-huertas/en";
 const cvUrl = "/Mauricio_Montoya_Huertas_CV.pdf";
 
-const companies = ["TopBuild", "IBM Inmobiliaria", "ESCATH", "Lyfestyles", "Rasa Floors", "Holt Renfrew", "Greyhill", "EOne Entertainment", "Lionsgate"];
-const companyLoop = [...companies, ...companies];
+const companyLogos = [
+  { name: "Microsoft", logo: "/logos/microsoft.png" },
+  { name: "TopBuild", logo: "/logos/topbuild.png" },
+  { name: "IPB Inmobiliaria Piedras Blancas", logo: "/logos/ipb.png" },
+  { name: "ESCATH", logo: "/logos/escath.png" },
+  { name: "Rasa Floors", logo: "/logos/rasa-floors.png" },
+  { name: "Holt Renfrew", logo: "/logos/holt-renfrew.png" },
+  { name: "Greyhill Capital Partners", logo: "/logos/greyhill.png" },
+  { name: "EOne Entertainment", logo: "/logos/eone.png" },
+  { name: "Delbridge Solutions", logo: "/logos/delbridge.png" },
+  { name: "TruData", logo: "/logos/tru-data.png" },
+  { name: "Grupo Unicomer", logo: "/logos/unicomer.png" },
+  { name: "Quadrant Technologies", logo: "/logos/quadrant.png" },
+  { name: "Dataneoshore", logo: "/logos/dataneoshore.png" },
+  { name: "Moody's", logo: "/logos/moodys.png" },
+  { name: "Lionsgate", logoText: "Lionsgate" },
+  { name: "Lyfestyles", logoText: "Lyfestyles" },
+];
+const companyLogoLoop = [...companyLogos, ...companyLogos];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -101,18 +118,18 @@ export default function MauricioPortfolio() {
             </motion.div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.15 }} className="relative min-h-[420px]">
-            <motion.div animate={{ y: [0, -14, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} whileHover={{ scale: 1.05, rotate: -1 }} className="absolute left-0 top-8 w-48 rounded-[2rem] bg-white/70 p-6 text-center shadow-xl backdrop-blur md:left-8">
+          <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.15 }} className="relative min-h-[420px] max-lg:mx-auto max-lg:w-full max-sm:min-h-[520px]">
+            <motion.div animate={{ y: [0, -14, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} whileHover={{ scale: 1.05, rotate: -1 }} className="absolute left-0 top-8 w-48 rounded-[2rem] max-sm:left-2 max-sm:top-6 max-sm:w-44 max-sm:left-2 max-sm:top-6 max-sm:w-44 bg-white/70 p-6 text-center shadow-xl backdrop-blur md:left-8">
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow"><Building2 className="text-[#44d6ad]" /></div>
               <p className="text-sm leading-6 text-[#526074]">Enterprise analytics, reporting automation and Microsoft Fabric delivery.</p>
               <p className="mt-5 font-black text-[#445065]">Fabric</p>
             </motion.div>
-            <motion.div animate={{ y: [0, 16, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} whileHover={{ scale: 1.05, rotate: 1 }} className="absolute right-4 top-0 w-52 rounded-[2rem] bg-white/60 p-6 text-center shadow-xl backdrop-blur">
+            <motion.div animate={{ y: [0, 16, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} whileHover={{ scale: 1.05, rotate: 1 }} className="absolute right-4 top-0 w-52 rounded-[2rem] max-sm:right-2 max-sm:top-48 max-sm:w-44 max-sm:right-2 max-sm:top-40 max-sm:w-44 bg-white/60 p-6 text-center shadow-xl backdrop-blur">
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow"><BarChart3 className="text-[#44d6ad]" /></div>
               <p className="text-sm leading-6 text-[#526074]">Dashboards that simplify decisions for executive and operational teams.</p>
               <p className="mt-5 font-black text-[#445065]">Power BI</p>
             </motion.div>
-            <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }} whileHover={{ scale: 1.05 }} className="absolute bottom-0 right-16 w-56 rounded-[2rem] bg-white/70 p-6 text-center shadow-xl backdrop-blur">
+            <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }} whileHover={{ scale: 1.05 }} className="absolute bottom-0 right-16 w-56 rounded-[2rem] max-sm:bottom-2 max-sm:right-10 max-sm:w-48 max-sm:right-8 max-sm:bottom-4 max-sm:w-48 bg-white/70 p-6 text-center shadow-xl backdrop-blur">
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow"><GraduationCap className="text-[#44d6ad]" /></div>
               <p className="text-sm leading-6 text-[#526074]">Hands-on training for teams that need practical analytics capabilities.</p>
               <p className="mt-5 font-black text-[#445065]">Training</p>
@@ -133,16 +150,39 @@ export default function MauricioPortfolio() {
         </div>
       </motion.section>
 
-      <section className="overflow-hidden px-6 py-16 lg:px-10">
+      <section className="overflow-hidden px-6 py-20 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-center text-sm font-bold uppercase tracking-[0.3em] text-[#44bfa0]">Trusted experience</p>
           <h2 className="mt-3 text-center text-4xl font-black text-[#445065] md:text-5xl">Companies and projects served</h2>
+          <p className="mx-auto mt-4 max-w-3xl text-center text-[#526074]">
+            Experience supporting analytics, reporting and data initiatives for organizations across consulting, retail, real estate, flooring, health, entertainment and enterprise services.
+          </p>
         </div>
-        <div className="relative mt-10">
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-[#f4f1ea] to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-[#f4f1ea] to-transparent" />
-          <motion.div animate={{ x: [0, -900] }} transition={{ duration: 28, repeat: Infinity, ease: "linear" }} className="flex w-max gap-4">
-            {companyLoop.map((company, index) => <motion.div key={`${company}-${index}`} whileHover={{ scale: 1.08, y: -4 }} className="rounded-full border border-white bg-white/80 px-7 py-3 font-bold text-[#526074] shadow-sm backdrop-blur">{company}</motion.div>)}
+
+        <div className="relative mt-12">
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-28 bg-gradient-to-r from-[#f4f1ea] to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-28 bg-gradient-to-l from-[#f4f1ea] to-transparent" />
+
+          <motion.div animate={{ x: [0, -1180] }} transition={{ duration: 34, repeat: Infinity, ease: "linear" }} className="flex w-max gap-5">
+            {companyLogoLoop.map((company, index) => (
+              <motion.div
+                key={`${company.name}-${index}`}
+                whileHover={{ scale: 1.07, y: -6 }}
+                className="group flex h-24 w-56 items-center justify-center rounded-[2rem] border border-white bg-white/80 px-6 py-4 shadow-sm backdrop-blur transition-all hover:shadow-xl"
+              >
+                {company.logo ? (
+                  <img
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    className="max-h-14 max-w-[165px] object-contain opacity-80 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                  />
+                ) : (
+                  <span className="text-xl font-black tracking-wide text-[#445065] opacity-75 transition-opacity group-hover:opacity-100">
+                    {company.logoText}
+                  </span>
+                )}
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -171,7 +211,7 @@ export default function MauricioPortfolio() {
       </section>
 
       <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.65 }} className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-        <div className="mb-10"><p className="text-sm font-bold uppercase tracking-[0.3em] text-[#44bfa0]">Portfolio</p><h2 className="mt-3 text-4xl font-black text-[#445065] md:text-5xl">Featured work</h2><p className="mt-4 max-w-2xl text-[#526074]">Replace these images with real dashboard screenshots, design work, photography or business cases.</p></div>
+        <div className="mb-10"><p className="text-sm font-bold uppercase tracking-[0.3em] text-[#44bfa0]">Portfolio</p><h2 className="mt-3 text-4xl font-black text-[#445065] md:text-5xl">Featured work</h2><p className="mt-4 max-w-2xl text-[#526074]">This section can evolve into real case studies with dashboard screenshots, Power BI demos and business outcomes.</p></div>
         <div className="grid gap-6 lg:grid-cols-3">{projects.map((project) => <motion.div key={project.title} whileHover={{ y: -10, scale: 1.015 }} transition={{ type: "spring", stiffness: 220 }}><Card className="overflow-hidden rounded-[2rem] border-white bg-white/85 shadow-sm transition-shadow hover:shadow-2xl"><motion.img whileHover={{ scale: 1.04 }} transition={{ duration: 0.35 }} src={project.image} alt={project.title} className="h-56 w-full object-cover" /><CardContent className="p-6"><p className="text-sm font-bold text-[#44bfa0]">{project.category}</p><h3 className="mt-2 text-2xl font-black text-[#445065]">{project.title}</h3><p className="mt-3 text-[#526074]">{project.description}</p></CardContent></Card></motion.div>)}</div>
       </motion.section>
 
