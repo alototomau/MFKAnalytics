@@ -33,18 +33,12 @@ const companyLogos = [
   { name: "TopBuild", logo: "/logos/topbuild.png" },
   { name: "IPB Inmobiliaria Piedras Blancas", logo: "/logos/ipb.png" },
   { name: "ESCATH", logo: "/logos/escath.png" },
-  { name: "Rasa Floors", logo: "/logos/rasa-floors.png" },
-  { name: "Holt Renfrew", logo: "/logos/holt-renfrew.png" },
-  { name: "Greyhill Capital Partners", logo: "/logos/greyhill.png" },
-  { name: "EOne Entertainment", logo: "/logos/eone.png" },
   { name: "Delbridge Solutions", logo: "/logos/delbridge.png" },
   { name: "TruData", logo: "/logos/tru-data.png" },
   { name: "Grupo Unicomer", logo: "/logos/unicomer.png" },
   { name: "Quadrant Technologies", logo: "/logos/quadrant.png" },
   { name: "Dataneoshore", logo: "/logos/dataneoshore.png" },
   { name: "Moody's", logo: "/logos/moodys.png" },
-  { name: "Lionsgate", logoText: "Lionsgate" },
-  { name: "Lyfestyles", logoText: "Lyfestyles" },
 ];
 const companyLogoLoop = [...companyLogos, ...companyLogos];
 
