@@ -209,18 +209,18 @@ export default function MauricioPortfolio() {
             </motion.div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.15 }} className="grid gap-4 sm:grid-cols-3 lg:relative lg:block lg:min-h-[420px] max-lg:mx-auto max-lg:w-full">
-            <motion.div animate={{ y: [0, -14, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} whileHover={{ scale: 1.05, rotate: -1 }} className="relative rounded-[1.75rem] bg-white/80 p-5 text-center shadow-lg backdrop-blur sm:p-6 lg:absolute lg:left-0 lg:top-8 lg:w-48 lg:bg-white/70 lg:md:left-8">
+          <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.15 }} className="grid gap-5 sm:grid-cols-3 md:gap-6 lg:relative lg:block lg:min-h-[420px] max-lg:mx-auto max-lg:w-full">
+            <motion.div whileHover={{ scale: 1.02 }} className="relative min-h-[190px] rounded-[1.75rem] bg-white/80 p-5 text-center shadow-lg backdrop-blur sm:min-h-[230px] sm:p-6 lg:absolute lg:min-h-0 lg:left-0 lg:top-8 lg:w-48 lg:bg-white/70 lg:md:left-8">
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow"><Building2 className="text-[#44d6ad]" /></div>
               <p className="text-sm leading-6 text-[#526074]">Enterprise analytics, reporting automation and Microsoft Fabric delivery.</p>
               <p className="mt-5 font-black text-[#445065]">Fabric</p>
             </motion.div>
-            <motion.div animate={{ y: [0, 16, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} whileHover={{ scale: 1.05, rotate: 1 }} className="relative rounded-[1.75rem] bg-white/80 p-5 text-center shadow-lg backdrop-blur sm:p-6 lg:absolute lg:right-4 lg:top-0 lg:w-52 lg:bg-white/60">
+            <motion.div whileHover={{ scale: 1.02 }} className="relative min-h-[190px] rounded-[1.75rem] bg-white/80 p-5 text-center shadow-lg backdrop-blur sm:min-h-[230px] sm:p-6 lg:absolute lg:min-h-0 lg:right-4 lg:top-0 lg:w-52 lg:bg-white/60">
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow"><BarChart3 className="text-[#44d6ad]" /></div>
               <p className="text-sm leading-6 text-[#526074]">Dashboards that simplify decisions for executive and operational teams.</p>
               <p className="mt-5 font-black text-[#445065]">Power BI</p>
             </motion.div>
-            <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }} whileHover={{ scale: 1.05 }} className="relative rounded-[1.75rem] bg-white/80 p-5 text-center shadow-lg backdrop-blur sm:p-6 lg:absolute lg:bottom-0 lg:right-16 lg:w-56 lg:bg-white/70">
+            <motion.div whileHover={{ scale: 1.02 }} className="relative min-h-[190px] rounded-[1.75rem] bg-white/80 p-5 text-center shadow-lg backdrop-blur sm:min-h-[230px] sm:p-6 lg:absolute lg:min-h-0 lg:bottom-0 lg:right-16 lg:w-56 lg:bg-white/70">
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow"><GraduationCap className="text-[#44d6ad]" /></div>
               <p className="text-sm leading-6 text-[#526074]">Hands-on training for teams that need practical analytics capabilities.</p>
               <p className="mt-5 font-black text-[#445065]">Training</p>
