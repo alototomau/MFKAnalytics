@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Mail, BarChart3, Database, GraduationCap, BriefcaseBusiness, CheckCircle2, Sparkles, LayoutDashboard, Cloud, ArrowRight, Layers3, Users, Rocket, BookOpenCheck, Download, Building2, Quote, Star } from "lucide-react";
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const linkedInUrl = "https://cr.linkedin.com/in/mauricio-montoya-huertas/en";
 const cvUrl = "/Mauricio_Montoya_Huertas_CV.pdf";
@@ -91,10 +93,67 @@ const recommendations = [
   { author: "Isaac Traña", role: "ASQ Six Sigma Black Belt | PMP | Lean | Scrum Master", quote: "Mauricio is passionate about BI and never settles for what he already knows. He continuously improves and brings collaboration, service and ideas to the team." },
 ];
 
+
+function Header() {
+  const navItems = [
+    { label: "Home", href: "#home" },
+    { label: "Services", href: "#services" },
+    { label: "Experience", href: "#experience" },
+    { label: "Recommendations", href: "#recommendations" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/40 bg-[#f7fbff]/75 shadow-sm backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:px-10">
+        <a href="#home" className="group flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#07111f] shadow-sm transition-transform group-hover:scale-105">
+            <span className="text-sm font-black text-[#44d6ad]">MFK</span>
+          </div>
+          <div className="leading-tight">
+            <p className="font-black tracking-tight text-[#445065]">MFK Analytics</p>
+            <p className="hidden text-xs font-semibold uppercase tracking-[0.18em] text-[#23b895] sm:block">Power BI · Fabric</p>
+          </div>
+        </a>
+
+        <div className="hidden items-center gap-1 rounded-full border border-white bg-white/65 p-1 shadow-sm lg:flex">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href} className="rounded-full px-4 py-2 text-sm font-bold text-[#526074] transition hover:bg-[#d8fbf2] hover:text-[#07111f]">
+              {item.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-2">
+          <a href={cvUrl} download className="hidden sm:block">
+            <Button variant="outline" className="rounded-2xl border-[#44d6ad] bg-white/80 px-4 py-3 text-sm font-bold text-[#445065] hover:bg-white">
+              <Download className="mr-2" size={16} /> CV
+            </Button>
+          </a>
+          <a href="#contact">
+            <Button className="rounded-2xl bg-[#07111f] px-4 py-3 text-sm font-bold text-white hover:bg-[#172033]">
+              Book a Consultation
+            </Button>
+          </a>
+        </div>
+      </nav>
+
+      <div className="flex gap-2 overflow-x-auto px-5 pb-3 lg:hidden">
+        {navItems.map((item) => (
+          <a key={item.href} href={item.href} className="shrink-0 rounded-full border border-white bg-white/70 px-4 py-2 text-xs font-bold text-[#526074] shadow-sm">
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </header>
+  );
+}
+
 export default function MauricioPortfolio() {
   return (
     <main className="min-h-screen scroll-smooth bg-[#f4f1ea] text-[#1f2937]">
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#f7fbff] via-[#eefbf7] to-[#dbe7f8]">
+      <Header />
+      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#f7fbff] via-[#eefbf7] to-[#dbe7f8] pt-20">
         <motion.div animate={{ x: [0, 30, 0], y: [0, -22, 0] }} transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }} className="absolute left-10 top-20 h-72 w-72 rounded-full bg-[#5eead4]/30 blur-3xl" />
         <motion.div animate={{ x: [0, -28, 0], y: [0, 18, 0] }} transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }} className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#bfd2f3]/60 blur-3xl" />
         <motion.div animate={{ rotate: 360 }} transition={{ duration: 28, repeat: Infinity, ease: "linear" }} className="absolute right-[18%] top-32 h-24 w-24 rounded-[2rem] border border-white/60 bg-white/20 shadow-sm backdrop-blur" />
@@ -112,7 +171,7 @@ export default function MauricioPortfolio() {
               I help companies transform complex data into scalable analytics platforms, executive dashboards, semantic models and practical training programs that drive better decisions.
             </p>
             <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }} className="mt-9 flex flex-wrap gap-4">
-              <a href="#services"><Button className="rounded-2xl bg-[#07111f] px-6 py-6 text-base font-bold text-white hover:bg-[#172033]">Explore services <ArrowRight className="ml-2" size={18} /></Button></a>
+              <a href="#services"><Button className="rounded-2xl bg-[#07111f] px-6 py-6 text-base font-bold text-white hover:bg-[#172033]">Explore Services <ArrowRight className="ml-2" size={18} /></Button></a>
               <a href={cvUrl} download><Button variant="outline" className="rounded-2xl border-[#44d6ad] bg-white/80 px-6 py-6 text-base font-bold text-[#445065] hover:bg-white"><Download className="mr-2" size={18} /> Download CV</Button></a>
               <a href={linkedInUrl} target="_blank" rel="noreferrer"><Button variant="outline" className="rounded-2xl border-slate-300 bg-white/60 px-6 py-6 text-base text-[#445065] hover:bg-white"><span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded bg-[#44d6ad] text-xs font-black text-white">in</span> LinkedIn</Button></a>
             </motion.div>
@@ -215,12 +274,12 @@ export default function MauricioPortfolio() {
         <div className="grid gap-6 lg:grid-cols-3">{projects.map((project) => <motion.div key={project.title} whileHover={{ y: -10, scale: 1.015 }} transition={{ type: "spring", stiffness: 220 }}><Card className="overflow-hidden rounded-[2rem] border-white bg-white/85 shadow-sm transition-shadow hover:shadow-2xl"><motion.img whileHover={{ scale: 1.04 }} transition={{ duration: 0.35 }} src={project.image} alt={project.title} className="h-56 w-full object-cover" /><CardContent className="p-6"><p className="text-sm font-bold text-[#44bfa0]">{project.category}</p><h3 className="mt-2 text-2xl font-black text-[#445065]">{project.title}</h3><p className="mt-3 text-[#526074]">{project.description}</p></CardContent></Card></motion.div>)}</div>
       </motion.section>
 
-      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.65 }} className="mx-auto grid max-w-7xl gap-8 px-6 py-16 lg:grid-cols-2 lg:px-10">
+      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.65 }} id="experience" className="mx-auto grid max-w-7xl gap-8 px-6 py-16 lg:grid-cols-2 lg:px-10">
         <motion.div whileHover={{ y: -8 }}><Card className="h-full rounded-[2rem] border-white bg-white/85 shadow-sm transition-shadow hover:shadow-xl"><CardContent className="p-8"><Rocket className="mb-5 text-[#44bfa0]" size={34} /><h2 className="text-3xl font-black text-[#445065]">Relevant experience</h2><div className="mt-6 space-y-5 text-[#526074]"><p><strong className="text-[#445065]">Delbridge:</strong> ETL, Microsoft Fabric, migrations, Lakehouse, Warehouse, semantic models and automation.</p><p><strong className="text-[#445065]">Tru Data:</strong> end-to-end data platforms, APIs, PySpark, Python, medallion architecture and data quality.</p><p><strong className="text-[#445065]">Microsoft:</strong> enterprise BI solutions, Azure Synapse, Microsoft Fabric and reporting process optimization.</p></div></CardContent></Card></motion.div>
         <motion.div whileHover={{ y: -8 }}><Card className="h-full rounded-[2rem] border-white bg-white/85 shadow-sm transition-shadow hover:shadow-xl"><CardContent className="p-8"><BookOpenCheck className="mb-5 text-[#44bfa0]" size={34} /><h2 className="text-3xl font-black text-[#445065]">Key certifications</h2><div className="mt-6 grid gap-3">{certifications.map((item) => <motion.div key={item} whileHover={{ x: 6 }} className="rounded-2xl bg-[#f4f1ea] px-4 py-3 text-[#526074]">{item}</motion.div>)}</div></CardContent></Card></motion.div>
       </motion.section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#e8f7f4] via-[#f7fbff] to-[#dfe9f8] px-6 py-20 lg:px-10">
+      <section id="recommendations" className="relative overflow-hidden bg-gradient-to-br from-[#e8f7f4] via-[#f7fbff] to-[#dfe9f8] px-6 py-20 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end"><div><p className="text-sm font-bold uppercase tracking-[0.3em] text-[#44bfa0]">LinkedIn</p><h2 className="mt-3 text-4xl font-black text-[#445065] md:text-5xl">Professional recommendations</h2></div><p className="text-[#526074]">Real recommendations from people who worked with, studied with or managed Mauricio. Sensitive contact information is intentionally excluded.</p></div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -233,11 +292,107 @@ export default function MauricioPortfolio() {
         </div>
       </section>
 
-      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65 }} className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-        <Card className="rounded-[2.5rem] border-white bg-[#07111f] text-white shadow-xl"><CardContent className="grid gap-8 p-10 md:grid-cols-[1fr_auto] md:items-center"><div><h2 className="text-4xl font-black">Need dashboards, training or data architecture?</h2><p className="mt-4 max-w-2xl text-slate-300">Let’s talk about turning your data into clear, actionable business information.</p></div><div className="flex flex-wrap gap-3"><a href={linkedInUrl} target="_blank" rel="noreferrer"><Button className="rounded-2xl bg-[#44d6ad] px-6 py-6 font-bold text-slate-950 hover:bg-[#7ee7cb]"><Mail className="mr-2" size={18} /> Contact</Button></a><a href={cvUrl} download><Button variant="outline" className="rounded-2xl border-white/20 bg-white/5 px-6 py-6 text-white hover:bg-white/10"><Download className="mr-2" size={18} /> Download CV</Button></a></div></CardContent></Card>
+
+      <motion.section id="contact" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65 }} className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+        <Card className="overflow-hidden rounded-[2.5rem] border-white bg-[#07111f] text-white shadow-xl">
+          <CardContent className="grid gap-0 p-0 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="relative overflow-hidden p-8 md:p-10">
+              <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-[#44d6ad]/20 blur-3xl" />
+              <div className="absolute -bottom-20 right-0 h-64 w-64 rounded-full bg-[#bfd2f3]/10 blur-3xl" />
+              <div className="relative">
+                <p className="text-sm font-black uppercase tracking-[0.32em] text-[#44d6ad]">Let’s work together</p>
+                <h2 className="mt-4 text-4xl font-black leading-tight md:text-5xl">Request a Power BI or Fabric consultation</h2>
+                <p className="mt-5 max-w-xl text-slate-300">
+                  Tell me what you need: dashboards, training, Microsoft Fabric, semantic models, data pipelines or BI advisory.
+                </p>
+
+                <div className="mt-8 grid gap-3 text-sm text-slate-200">
+                  {[
+                    "Power BI dashboards and executive reporting",
+                    "Microsoft Fabric architecture and implementation",
+                    "Corporate training for analytics teams",
+                    "Data engineering, semantic models and automation"
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle2 className="mt-0.5 shrink-0 text-[#44d6ad]" size={18} />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a href={linkedInUrl} target="_blank" rel="noreferrer">
+                    <Button className="rounded-2xl bg-[#44d6ad] px-5 py-5 font-bold text-slate-950 hover:bg-[#7ee7cb]">
+                      Connect on LinkedIn
+                    </Button>
+                  </a>
+                  <a href={cvUrl} download>
+                    <Button variant="outline" className="rounded-2xl border-white/20 bg-white/5 px-5 py-5 text-white hover:bg-white/10">
+                      <Download className="mr-2" size={18} /> Download CV
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 text-[#1f2937] md:p-10">
+              <form
+                action="https://formspree.io/f/YOUR_FORM_ID"
+                method="POST"
+                className="grid gap-4"
+              >
+                <input type="hidden" name="_subject" value="New consultation request from MFK Analytics website" />
+
+                <div>
+                  <label className="mb-2 block text-sm font-bold text-[#445065]">Name</label>
+                  <input name="name" required className="w-full rounded-2xl border border-slate-200 bg-[#f7fbff] px-4 py-3 outline-none transition focus:border-[#44d6ad] focus:ring-4 focus:ring-[#44d6ad]/15" placeholder="Your name" />
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-bold text-[#445065]">Work email</label>
+                    <input name="email" type="email" required className="w-full rounded-2xl border border-slate-200 bg-[#f7fbff] px-4 py-3 outline-none transition focus:border-[#44d6ad] focus:ring-4 focus:ring-[#44d6ad]/15" placeholder="name@company.com" />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-bold text-[#445065]">Company</label>
+                    <input name="company" className="w-full rounded-2xl border border-slate-200 bg-[#f7fbff] px-4 py-3 outline-none transition focus:border-[#44d6ad] focus:ring-4 focus:ring-[#44d6ad]/15" placeholder="Company name" />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-bold text-[#445065]">Service needed</label>
+                  <select name="service" className="w-full rounded-2xl border border-slate-200 bg-[#f7fbff] px-4 py-3 outline-none transition focus:border-[#44d6ad] focus:ring-4 focus:ring-[#44d6ad]/15">
+                    <option>Power BI Dashboard</option>
+                    <option>Microsoft Fabric / Lakehouse</option>
+                    <option>Corporate Training</option>
+                    <option>Data Engineering / Pipelines</option>
+                    <option>Analytics Consulting</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-bold text-[#445065]">Message</label>
+                  <textarea name="message" required rows="5" className="w-full resize-none rounded-2xl border border-slate-200 bg-[#f7fbff] px-4 py-3 outline-none transition focus:border-[#44d6ad] focus:ring-4 focus:ring-[#44d6ad]/15" placeholder="Tell me about your project, timeline and goals." />
+                </div>
+
+                <Button type="submit" className="mt-2 rounded-2xl bg-[#07111f] px-6 py-5 text-base font-bold text-white hover:bg-[#172033]">
+                  Request Consultation <ArrowRight className="ml-2" size={18} />
+                </Button>
+
+                <p className="text-xs leading-5 text-slate-500">
+                  Form service is prepared for Formspree. Replace <strong>YOUR_FORM_ID</strong> with your real Formspree form ID to receive messages.
+                </p>
+              </form>
+            </div>
+          </CardContent>
+        </Card>
       </motion.section>
 
-      <footer className="border-t border-white px-6 py-8 text-center text-sm text-[#6b7280]">© {new Date().getFullYear()} Mauricio Montoya Huertas. Analytics, Power BI and Microsoft Fabric.</footer>
+      <Analytics />
+      <SpeedInsights />
+
+      <footer className="border-t border-white px-6 py-8 text-center text-sm text-[#6b7280]">© {new Date().getFullYear()} MFK Analytics · Mauricio Montoya Huertas. Power BI, Microsoft Fabric and Data Engineering.</footer>
     </main>
   );
 }
