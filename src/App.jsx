@@ -122,7 +122,7 @@ function Header() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/40 bg-[#f7fbff]/85 shadow-sm backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/40 bg-[#f7fbff]/90 shadow-sm backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 lg:px-10">
         <a href="#home" className="group flex min-w-0 items-center gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#07111f] shadow-sm transition-transform group-hover:scale-105">
@@ -136,30 +136,41 @@ function Header() {
 
         <div className="hidden items-center gap-1 rounded-full border border-white bg-white/65 p-1 shadow-sm lg:flex">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="rounded-full px-4 py-2 text-sm font-bold text-[#526074] transition hover:bg-[#d8fbf2] hover:text-[#07111f]">
+            <a
+              key={item.href}
+              href={item.href}
+              className="rounded-full px-4 py-2 text-sm font-bold text-[#526074] transition hover:bg-[#d8fbf2] hover:text-[#07111f]"
+            >
               {item.label}
             </a>
           ))}
         </div>
 
-        <a href="#contact" className="shrink-0">
-          <Button className="rounded-2xl bg-[#07111f] px-3 py-3 text-[11px] font-bold text-white hover:bg-[#172033] sm:px-4 sm:text-sm">
-            Book a Consultation
-          </Button>
-        </a>
-      </nav>
-
-      <div className="grid grid-cols-4 gap-2 px-4 pb-3 lg:hidden">
-        {navItems.filter((item) => item.label !== "Contact").slice(0, 4).map((item) => (
-          <a
-            key={item.href}
-            href={item.href}
-            className="rounded-full border border-white bg-white/70 px-2 py-2 text-center text-[11px] font-bold text-[#526074] shadow-sm backdrop-blur transition hover:bg-[#d8fbf2] hover:text-[#07111f]"
-          >
-            {item.label}
+        <div className="flex shrink-0 items-center gap-2">
+          <a href="#contact">
+            <Button className="rounded-2xl bg-[#07111f] px-3 py-3 text-[11px] font-bold text-white hover:bg-[#172033] sm:px-4 sm:text-sm">
+              Book a Consultation
+            </Button>
           </a>
-        ))}
-      </div>
+
+          <details className="group relative lg:hidden">
+            <summary className="list-none cursor-pointer rounded-2xl border border-white bg-white/80 px-3 py-3 text-[11px] font-black text-[#445065] shadow-sm transition hover:bg-[#d8fbf2]">
+              Menu
+            </summary>
+            <div className="absolute right-0 top-12 z-50 w-56 overflow-hidden rounded-3xl border border-white bg-white/95 p-2 shadow-2xl backdrop-blur-xl">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="block rounded-2xl px-4 py-3 text-sm font-bold text-[#526074] transition hover:bg-[#d8fbf2] hover:text-[#07111f]"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </details>
+        </div>
+      </nav>
     </header>
   );
 }
@@ -169,7 +180,7 @@ export default function MauricioPortfolio() {
     <main className="min-h-screen scroll-smooth bg-[#f4f1ea] text-[#1f2937]">
       <Header />
 
-      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#f7fbff] via-[#eefbf7] to-[#dbe7f8] pt-28 lg:pt-20">
+      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#f7fbff] via-[#eefbf7] to-[#dbe7f8] pt-20 lg:pt-20">
         <motion.div animate={{ x: [0, 30, 0], y: [0, -22, 0] }} transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }} className="absolute left-10 top-20 h-72 w-72 rounded-full bg-[#5eead4]/30 blur-3xl" />
         <motion.div animate={{ x: [0, -28, 0], y: [0, 18, 0] }} transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }} className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#bfd2f3]/60 blur-3xl" />
 
