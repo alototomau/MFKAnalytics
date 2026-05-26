@@ -112,7 +112,7 @@ function Header() {
           </div>
           <div className="leading-tight">
             <p className="font-black tracking-tight text-[#445065]">MFK Analytics</p>
-            <p className="hidden text-xs font-semibold uppercase tracking-[0.18em] text-[#23b895] sm:block">Power BI · Fabric</p>
+            <p className="hidden text-xs font-semibold uppercase tracking-[0.18em] text-[#23b895] sm:block">Analytics Automation</p>
           </div>
         </a>
 
@@ -161,7 +161,7 @@ export default function MauricioPortfolio() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1fr_0.95fr] lg:px-10">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <motion.div whileHover={{ scale: 1.03 }} className="mb-7 inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/70 px-4 py-2 text-sm font-semibold text-teal-700 shadow-sm backdrop-blur">
-              <Sparkles size={16} /> Power BI · Microsoft Fabric · Data Engineering
+              <Sparkles size={16} /> Analytics Automation · BI · Data Engineering
             </motion.div>
             <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-[#445065] md:text-7xl">
               Analytical Solutions <span className="block text-[#44d6ad]">for Growth.</span>
@@ -296,19 +296,19 @@ export default function MauricioPortfolio() {
       <motion.section id="contact" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.65 }} className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <Card className="overflow-hidden rounded-[2.5rem] border-white bg-[#07111f] text-white shadow-xl">
           <CardContent className="grid gap-0 p-0 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="relative overflow-hidden p-8 md:p-10">
+            <div className="relative overflow-hidden bg-gradient-to-br from-[#07111f] via-[#0b1b2d] to-[#10243a] p-8 md:p-10">
               <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-[#44d6ad]/20 blur-3xl" />
               <div className="absolute -bottom-20 right-0 h-64 w-64 rounded-full bg-[#bfd2f3]/10 blur-3xl" />
               <div className="relative">
                 <p className="text-sm font-black uppercase tracking-[0.32em] text-[#44d6ad]">Let’s work together</p>
-                <h2 className="mt-4 text-4xl font-black leading-tight md:text-5xl">Request a Power BI or Fabric consultation</h2>
-                <p className="mt-5 max-w-xl text-slate-300">
-                  Tell me what you need: dashboards, training, Microsoft Fabric, semantic models, data pipelines or BI advisory.
+                <h2 className="mt-4 text-4xl font-black leading-tight text-white md:text-5xl">Request an analytics automation consultation</h2>
+                <p className="mt-5 max-w-xl text-slate-200">
+                  Tell me what you need: dashboards, automation, Microsoft Fabric, semantic models, data pipelines, training or analytics advisory.
                 </p>
 
-                <div className="mt-8 grid gap-3 text-sm text-slate-200">
+                <div className="mt-8 grid gap-3 text-sm text-slate-100">
                   {[
-                    "Power BI dashboards and executive reporting",
+                    "Analytics automation, dashboards and executive reporting",
                     "Microsoft Fabric architecture and implementation",
                     "Corporate training for analytics teams",
                     "Data engineering, semantic models and automation"
@@ -337,7 +337,7 @@ export default function MauricioPortfolio() {
 
             <div className="bg-white p-6 text-[#1f2937] md:p-10">
               <form
-                action="https://formspree.io/f/YOUR_FORM_ID"
+                action="https://formspree.io/f/meedrplp"
                 method="POST"
                 className="grid gap-4"
               >
@@ -362,11 +362,11 @@ export default function MauricioPortfolio() {
                 <div>
                   <label className="mb-2 block text-sm font-bold text-[#445065]">Service needed</label>
                   <select name="service" className="w-full rounded-2xl border border-slate-200 bg-[#f7fbff] px-4 py-3 outline-none transition focus:border-[#44d6ad] focus:ring-4 focus:ring-[#44d6ad]/15">
-                    <option>Power BI Dashboard</option>
+                    <option>Power BI / Analytics Dashboard</option>
                     <option>Microsoft Fabric / Lakehouse</option>
                     <option>Corporate Training</option>
                     <option>Data Engineering / Pipelines</option>
-                    <option>Analytics Consulting</option>
+                    <option>Analytics Automation Consulting</option>
                     <option>Other</option>
                   </select>
                 </div>
@@ -381,7 +381,7 @@ export default function MauricioPortfolio() {
                 </Button>
 
                 <p className="text-xs leading-5 text-slate-500">
-                  Form service is prepared for Formspree. Replace <strong>YOUR_FORM_ID</strong> with your real Formspree form ID to receive messages.
+                  Messages are sent securely through Formspree to MFK Analytics.
                 </p>
               </form>
             </div>

@@ -61,3 +61,13 @@ https://formspree.io/f/YOUR_FORM_ID
 ```
 
 Create a free Formspree form and replace `YOUR_FORM_ID` in `src/App.jsx`.
+
+## Branding update
+
+- Header tagline changed to Analytics Automation
+- Contact section contrast improved
+- Public Formspree technical note removed
+
+## Formspree connected
+
+Contact form endpoint configured: https://formspree.io/f/meedrplp
