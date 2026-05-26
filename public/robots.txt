@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mfk-analytics-v2.vercel.app/sitemap.xml
+Sitemap: https://mfkanalytics.io/sitemap.xml
