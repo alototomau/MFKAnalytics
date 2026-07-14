@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mfkanalytics.io/sitemap.xml
+Sitemap: https://www.mfkanalytics.io/sitemap.xml
