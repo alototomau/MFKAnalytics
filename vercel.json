@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/((?!assets/|favicon.svg|og-image.svg|site.webmanifest|robots.txt|sitemap.xml|Mauricio_Montoya_Huertas_CV.pdf).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
