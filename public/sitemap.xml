@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.mfkanalytics.io/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.mfkanalytics.io/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mfkanalytics.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mfkanalytics.io/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mfkanalytics.io/es" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.mfkanalytics.io/en</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mfkanalytics.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mfkanalytics.io/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mfkanalytics.io/es" />
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.mfkanalytics.io/es</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mfkanalytics.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mfkanalytics.io/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.mfkanalytics.io/es" />
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+</urlset>
